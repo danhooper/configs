@@ -105,6 +105,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+alias rdesktop='rdesktop -g 1200x800'
+alias ssh='ssh -A'
+
 export PYTHONSTARTUP=$HOME/.pythonstartup
 function redo_rpc_plugin() {
    sudo service postgresql restart
