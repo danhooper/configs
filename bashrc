@@ -99,23 +99,16 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+alias rdesktop='rdesktop -g 1200x800'
+alias ssh='ssh -A'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-alias rdesktop='rdesktop -g 1200x800'
-alias ssh='ssh -A'
-
 export PYTHONSTARTUP=$HOME/.pythonstartup
-function redo_rpc_plugin() {
-   sudo service postgresql restart
-   sudo python ~/hg/Praefectus/praefectus/bin/uninstall_plugin.py "$@" && sudo python ~/hg/Praefectus/praefectus/bin/install_plugin.py "$@";
-   sudo service apache2 restart
-}
-alias redoplugin='redo_rpc_plugin'
 alias grep='grep --color=auto'
 alias l='ls -ltrF --color=auto'
 hg_in_repo() {
@@ -125,7 +118,9 @@ hg_in_repo() {
 hg_branch() {
     hg branch 2> /dev/null | awk '{print " ["$1"]"}'
 }
-
+if [ -e ~/.bashrc_extras ]; then
+    . ~/bashrc_extras
+fi
 RED="[\033[0;31m\]"
 YELLOW="[\033[0;33m\]"
 GREEN="[\033[0;32m\]"
