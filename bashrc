@@ -119,7 +119,7 @@ hg_branch() {
     hg branch 2> /dev/null | awk '{print " ["$1"]"}'
 }
 if [ -e ~/.bashrc_extras ]; then
-    . ~/bashrc_extras
+    . ~/.bashrc_extras
 fi
 RED="[\033[0;31m\]"
 YELLOW="[\033[0;33m\]"
