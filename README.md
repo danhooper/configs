@@ -7,10 +7,10 @@ configs
 
 ## Symlinks
 ```
-ln -s ~/git/vim ~/.vim
-ln -s ~/git/vimrc ~/.vimrc
-ln -s ~/git/bashrc ~/.bashrc
-ln -s ~/git/gitconfig ~/.gitconfig
+ln -s ~/git/configs/vim ~/.vim
+ln -s ~/git/configs/vimrc ~/.vimrc
+ln -s ~/git/configs/bashrc ~/.bashrc
+ln -s ~/git/configs/gitconfig ~/.gitconfig
 ```
 
 ## Installing
