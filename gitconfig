@@ -1,7 +1,6 @@
-[user]
-	name = dhooper
-	email = dan.hooper@bts-s2.com
- 
+[include]
+    path = .githubconfig
+
 [alias]
      st = status
      ci = commit
@@ -19,46 +18,46 @@
      outgoing = !git out
      unstage = reset HEAD --
      last = log -1 HEAD
- 
+
 [core]
      editor = vim
- 
+
 [color]
      ui = always
- 
+
 [color "branch"]
      current = yellow bold
      local = green bold
      remote = cyan bold
- 
+
 [color "diff"]
      meta = yellow bold
      frag = magenta bold
      old = red bold
      new = green bold
      whitespace = red reverse
- 
+
 [color "status"]
      added = green bold
      changed = yellow bold
      untracked = red bold
- 
+
 [diff]
      tool = kdiff3
- 
+
 [difftool]
      prompt = false
- 
- 
+
+
 [grep]
      patternType = perl
- 
- 
+
+
 [merge]
      conflictstyle = diff3
- 
- 
+
+
 [pull]
 	rebase = true
- 
- 
+
+
