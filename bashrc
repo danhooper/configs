@@ -71,6 +71,7 @@ fi
 
 alias rdesktop='rdesktop -g 1200x800'
 alias ssh='ssh -A'
+alias genpasswd='< /dev/urandom tr -dc [:graph:] | head -c12; echo'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
