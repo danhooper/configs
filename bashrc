@@ -101,3 +101,6 @@ export LS_COLORS='di=38;5;108:fi=00:*svn-commit.tmp=31:ln=38;5;116:ex=38;5;186'
 #export PS1='`EXT_COLOR 187`\u@\h`EXT_COLOR 174` \w \$\[\033[00m\] > '
 export PS1='\[`EXT_COLOR 187`\]\u@\h\[`EXT_COLOR 174`\]\w$(hg_branch)$(__git_ps1)\$\[\033[00m\] '
 #export PS1='`EXT_COLOR 187`\u@\h`EXT_COLOR 174` \w \$\[\033[00m\] > '
+if [ -d "$HOME/git/git-hooks" ] ; then
+    export PATH=$PATH:$HOME/git/git-hooks
+fi

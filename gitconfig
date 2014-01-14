@@ -63,3 +63,5 @@
 
 [push]
 	default = simple
+[hooks]
+	global = /home/dhooper/git/git-hooks/contrib/
