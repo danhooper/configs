@@ -24,6 +24,7 @@ Bundle 'vim-scripts/diffchanges.vim'
 Bundle 'sukima/xmledit'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/DirDiff.vim'
+Bundle 'pangloss/vim-javascript'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
