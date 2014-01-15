@@ -107,3 +107,4 @@ set <A-]>=]
 imap ] <A-]
 
 set timeout ttimeoutlen=50
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
