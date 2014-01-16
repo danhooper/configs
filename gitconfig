@@ -1,5 +1,6 @@
 [include]
     path = .githubconfig
+    path = .gits2config
 
 [alias]
      st = status
@@ -63,5 +64,3 @@
 
 [push]
 	default = simple
-[hooks]
-	global = /home/dhooper/git/git-hooks/contrib/
