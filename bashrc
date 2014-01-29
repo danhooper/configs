@@ -93,6 +93,7 @@ hg_branch() {
 if [ -e ~/.bashrc_extras ]; then
     . ~/.bashrc_extras
 fi
+TITLEBAR='\[\e]0;\u@\h\a\]'
 RED="[\033[0;31m\]"
 YELLOW="[\033[0;33m\]"
 GREEN="[\033[0;32m\]"
@@ -100,7 +101,7 @@ function EXT_COLOR () { echo -ne "\033[38;5;$1m"; }
 export LS_COLORS='di=38;5;108:fi=00:*svn-commit.tmp=31:ln=38;5;116:ex=38;5;186'
 #PS1="$RED\$(date +%H:%M) \w$YELLOW \$(parse_git_branch)$GREEN\$ "
 #export PS1='`EXT_COLOR 187`\u@\h`EXT_COLOR 174` \w \$\[\033[00m\] > '
-export PS1='\[`EXT_COLOR 187`\]\u@\h\[`EXT_COLOR 174`\]\w$(hg_branch)$(__git_ps1)\$\[\033[00m\] '
+export PS1='${TITLEBAR}\[`EXT_COLOR 187`\]\u@\h\[`EXT_COLOR 174`\]\w$(hg_branch)$(__git_ps1)\$\[\033[00m\] '
 #export PS1='`EXT_COLOR 187`\u@\h`EXT_COLOR 174` \w \$\[\033[00m\] > '
 if [ -d "$HOME/git/git-hooks" ] ; then
     export PATH=$PATH:$HOME/git/git-hooks
