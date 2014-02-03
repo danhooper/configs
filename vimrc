@@ -25,6 +25,7 @@ Bundle 'sukima/xmledit'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/DirDiff.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'tell-k/vim-autopep8'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
