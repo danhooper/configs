@@ -96,6 +96,11 @@ hg_in_repo() {
 hg_branch() {
     hg branch 2> /dev/null | awk '{print " ["$1"]"}'
 }
+
+socks_proxy() {
+    ssh -D 1080 -CN $1
+}
+
 if [ -e ~/.bashrc_extras ]; then
     . ~/.bashrc_extras
 fi
