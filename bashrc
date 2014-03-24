@@ -74,10 +74,10 @@ alias rdesktop='rdesktop -g 1200x800'
 alias ssh='ssh -A'
 alias genpasswd='< /dev/urandom tr -dc [:graph:] | head -c12; echo'
 encrypt_string() {
-    echo $1 | openssl enc -base64 -e -aes-256-cbc -salt
+    echo "$1" | openssl enc -base64 -e -aes-256-cbc -salt
 }
 decrypt_string() {
-    echo $1 | openssl enc -base64 -d -aes-256-cbc -salt
+    echo "$1" | openssl enc -base64 -d -aes-256-cbc -salt
 }
 
 # enable programmable completion features (you don't need to enable
