@@ -23,6 +23,12 @@ sudo apt-get upgrade
 ```
 
 ## Installing
+sudo apt-get install cmake
+
+or
+
+sudo yum install cmake
+
 ```
 pushd configs
 sudo pip install -r requirements.txt
