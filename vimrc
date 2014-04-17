@@ -1,37 +1,27 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VUNDLE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/vundle
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+let g:vundle_default_git_proto='git'
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'phleet/vim-mercenary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'greatghoul/vim-web-indent'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'jnurmine/Zenburn'
-Bundle 'Townk/vim-autoclose'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'vim-scripts/linediff.vim'
-Bundle 'vim-scripts/Lawrencium'
-Bundle 'vim-scripts/gitv'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'vim-scripts/Clam'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/git-cheat'
+Bundle 'Townk/vim-autoclose'
 Bundle 'vim-scripts/diffchanges.vim'
 Bundle 'sukima/xmledit'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'vim-scripts/DirDiff.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tell-k/vim-autopep8'
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-filetype indent plugin on
 syntax on
 set t_Co=256
 colorscheme zenburn
@@ -85,27 +75,22 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTASTIC
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers = ['pep8', 'pylint', 'pyflakes']
-execute pathogen#infect()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" exuberant ctags
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tags=~/mytags
-
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-"let c='a'
-"while c <= 'z'
-"  exec "set <A-".toupper(c).">=\e".c
-"  exec "imap \e".c." <A-".toupper(c).">"
-"  let c = nr2char(1+char2nr(c))
-"endw
-set <A-]>=]
-imap ] <A-]
 
 set timeout ttimeoutlen=50
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+set showcmd
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_folding_disabled=1
