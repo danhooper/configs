@@ -19,6 +19,7 @@ Bundle 'vim-scripts/diffchanges.vim'
 Bundle 'sukima/xmledit'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tell-k/vim-autopep8'
+Bundle 'plasticboy/vim-markdown'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
