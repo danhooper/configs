@@ -26,8 +26,6 @@ sudo apt-get upgrade
 ```
 pushd configs
 sudo pip install -r requirements.txt
-git submodule init
-git submodule update
 vim +BundleInstall +qall
 popd
 pushd ~/.vim/bundle/YouCompleteMe
