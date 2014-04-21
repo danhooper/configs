@@ -20,6 +20,8 @@ Bundle 'sukima/xmledit'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tell-k/vim-autopep8'
 Bundle 'plasticboy/vim-markdown'
+
+filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
