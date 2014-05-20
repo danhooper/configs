@@ -91,7 +91,13 @@ set showcmd
 " YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>vd :call VerticalGoto()<CR>
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+function! VerticalGoto()
+    :vsplit
+    :YcmCompleter GoTo
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown

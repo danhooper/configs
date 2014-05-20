@@ -39,11 +39,12 @@ pushd ~/.vim/bundle/YouCompleteMe
 popd
 ```
 
-## Cheat Sheet
+## Vim Cheat Sheet
 * ,e Edit a file in the same directory as current file
 * ,v Edit a file in a new vertical pane
 * ,s Edit a file in a new horizontal pane
 * ,h Edit a file in a new horizontal pane
 * ,jd Jump to Definition
+* ,vd Vertical Jump to Definition
 * Ctrl-O Jump Backward
 * Ctrl-I Jump Forward
