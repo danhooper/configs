@@ -23,7 +23,7 @@ sudo apt-get upgrade
 ```
 
 ## Installing
-sudo apt-get install cmake build-essential python-dev
+sudo apt-get install cmake build-essential python-dev python-pip
 
 or
 
