@@ -15,7 +15,7 @@ ln -s ~/git/configs/git-prompt.sh ~/.git-prompt.sh
 ```
 
 ## Packages
-On Ubuntu, install a newer VIM.
+On Ubuntu 12.04, install a newer VIM.
 ```
 sudo apt-add-repository ppa:nmi/vim-snapshots
 sudo apt-get update
@@ -31,6 +31,8 @@ sudo yum install cmake
 
 ```
 pushd configs
+git submodule init
+git submodule update
 sudo pip install -r requirements.txt
 vim +BundleInstall +qall
 popd

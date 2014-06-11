@@ -64,3 +64,6 @@
 
 [push]
 	default = simple
+[user]
+	email = dan.c.hooper@gmail.com
+	name = Dan Hooper
