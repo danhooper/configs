@@ -23,11 +23,7 @@ sudo apt-get upgrade
 ```
 
 ## Installing
-sudo apt-get install cmake build-essential python-dev python-pip
-
-or
-
-sudo yum install cmake
+sudo apt-get install cmake build-essential python-dev python-pip npm nodejs-legacy
 
 ```
 pushd configs
@@ -39,6 +35,8 @@ popd
 pushd ~/.vim/bundle/YouCompleteMe
 ./install.sh
 popd
+# for Javascript jshint support in syntasic
+sudo npm install -g jshint
 ```
 
 ## Vim Cheat Sheet

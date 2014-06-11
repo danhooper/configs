@@ -13,3 +13,5 @@ vim/undo/
 
 vim/bundle/vim-markdown/
 vim/bundle/emmet-vim/
+vim/bundle/delimitMate/
+vim/bundle/tern_for_vim/

@@ -20,6 +20,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tell-k/vim-autopep8'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'mattn/emmet-vim'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'Raimondi/delimitMate'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -81,6 +83,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " SYNTASTIC
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers = ['pep8', 'pylint', 'pyflakes']
+let g:syntastic_javascript_checkers = ['jshint']
 
 
 set timeout ttimeoutlen=50
