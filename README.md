@@ -15,9 +15,11 @@ ln -s ~/git/configs/git-prompt.sh ~/.git-prompt.sh
 ```
 
 ## Packages
-On Ubuntu 12.04, install a newer VIM.
+On Ubuntu 12.04, install a newer VIM, node and git.
 ```
 sudo apt-add-repository ppa:nmi/vim-snapshots
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt-add-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get upgrade
 ```
