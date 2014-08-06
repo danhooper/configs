@@ -30,7 +30,6 @@ filetype plugin indent on
 syntax on
 set t_Co=256
 colorscheme zenburn
-set hidden
 set wildmenu
 set showcmd
 set ignorecase
@@ -69,6 +68,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :vsp %%
+map <leader>vn :vsp
 map <leader>s :sp %%
 map <leader>h :sp %%
 
@@ -106,3 +106,5 @@ endfunction
 " Markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled=1
+
+au FileType html setl sw=2 sts=2 et
