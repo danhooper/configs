@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/hoopedc1/git/global-bsp/webservice'
-let g:netrw_dirhist_2='/home/hoopedc1/git/global-bsp/webservice/src'
-let g:netrw_dirhist_3='/home/hoopedc1/git/global-bsp/webservice/src/edu'
-let g:netrw_dirhist_4='/home/hoopedc1/git/global-bsp/webservice/src/edu/jhuapl'
-let g:netrw_dirhist_5='/home/hoopedc1/git/global-bsp/webservice/src/edu/jhuapl/bsp'
-let g:netrw_dirhist_6='/home/hoopedc1/git/global-bsp/webservice/src/edu/jhuapl/bsp/resource'
-let g:netrw_dirhist_7='/home/hoopedc1/git/global-bsp/webservice/src/edu/jhuapl/bsp/dao'
-let g:netrw_dirhist_8='/home/hoopedc1/git/angular-owf-helper'
+let g:netrw_dirhist_cnt =0

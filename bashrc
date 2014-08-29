@@ -118,3 +118,4 @@ PS1='\[\e]0;\u@\h \w\a\]\[`EXT_COLOR 187`\]\u@\h\[`EXT_COLOR 174`\]\w$(hg_branch
 if [ -d "$HOME/git/git-hooks" ] ; then
     export PATH=$PATH:$HOME/git/git-hooks
 fi
+source ~/.bashrc_custom

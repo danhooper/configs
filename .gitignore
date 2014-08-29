@@ -17,3 +17,7 @@ vim/bundle/delimitMate/
 vim/bundle/tern_for_vim/
 vim/bundle/syntastic
 vim/bundle/vim-fugitive
+vim/bundle/JavaScript-Indent/
+vim/bundle/js-beautify/
+vim/bundle/vim-indent-guides/
+vim/bundle/vim-jsbeautify/

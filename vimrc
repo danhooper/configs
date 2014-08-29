@@ -16,12 +16,14 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/diffchanges.vim'
 Bundle 'sukima/xmledit'
-Bundle 'pangloss/vim-javascript'
 Bundle 'tell-k/vim-autopep8'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'mattn/emmet-vim'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,7 +70,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :vsp %%
-map <leader>vn :vsp
+map <leader>n :vsp
 map <leader>s :sp %%
 map <leader>h :sp %%
 
@@ -84,6 +86,7 @@ au Syntax * RainbowParenthesesLoadBraces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers = ['pep8', 'pylint', 'pyflakes']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_tidy_ignore_errors = ['<div> proprietary attribute "ng-', '<summernote> is not recognized!', '<span> proprietary attribute "translate"', '<button> proprietary attribute "ng-"', '<label> proprietary attribute "translate"', 'trimming empty <i>', '<button> proprietary attribute "ng-', '<input> proprietary attribute "ng-', '<span> proprietary attribute "ng-', '<button> proprietary attribute "translate"', '<li> proprietary attribute "ng-"']
 
 
 set timeout ttimeoutlen=50
@@ -108,3 +111,17 @@ endfunction
 let g:vim_markdown_folding_disabled=1
 
 au FileType html setl sw=2 sts=2 et
+autocmd BufRead,BufNewFile *.less set filetype=css
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JsBeautify
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType javascript map <leader>f :call JsBeautify()<cr>
+autocmd FileType html map <leader>f :call HtmlBeautify()<cr>
+autocmd FileType css map <leader>f :call CSSBeautify()<cr>
+autocmd FileType less map <leader>f :call CSSBeautify()<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent Guides
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi IndentGuidesOdd  ctermbg=white
+hi IndentGuidesEven ctermbg=lightgrey

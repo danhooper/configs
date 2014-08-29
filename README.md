@@ -43,10 +43,11 @@ sudo npm install -g jshint
 
 ## Vim Cheat Sheet
 * ,e Edit a file in the same directory as current file
-* ,v Edit a file in a new vertical pane
+* ,v Edit a file in the same directory in a new vertical pane
 * ,s Edit a file in a new horizontal pane
 * ,h Edit a file in a new horizontal pane
 * ,jd Jump to Definition
 * ,vd Vertical Jump to Definition
+* ,ig Indent Guide
 * Ctrl-O Jump Backward
 * Ctrl-I Jump Forward
