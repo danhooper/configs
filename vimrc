@@ -111,7 +111,9 @@ endfunction
 let g:vim_markdown_folding_disabled=1
 
 au FileType html setl sw=2 sts=2 et
-autocmd BufRead,BufNewFile *.less set filetype=css
+au FileType htmldjango setl sw=2 sts=2 et
+au BufRead,BufNewFile *.less set filetype=css
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JsBeautify
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
