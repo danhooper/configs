@@ -86,7 +86,7 @@ au Syntax * RainbowParenthesesLoadBraces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers = ['pep8', 'pylint', 'pyflakes']
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_html_tidy_ignore_errors = ['<div> proprietary attribute "ng-', '<summernote> is not recognized!', '<span> proprietary attribute "translate"', '<button> proprietary attribute "ng-"', '<label> proprietary attribute "translate"', 'trimming empty <i>', '<button> proprietary attribute "ng-', '<input> proprietary attribute "ng-', '<span> proprietary attribute "ng-', '<button> proprietary attribute "translate"', '<li> proprietary attribute "ng-"']
+let g:syntastic_html_tidy_ignore_errors = ['<div> proprietary attribute "ng-', '<summernote> is not recognized!', '<span> proprietary attribute "translate"', '<button> proprietary attribute "ng-"', '<label> proprietary attribute "translate"', 'trimming empty <i>', '<button> proprietary attribute "ng-', '<input> proprietary attribute "ng-', '<span> proprietary attribute "ng-', '<button> proprietary attribute "translate"', '<li> proprietary attribute "ng-"', '<label> proprietary attribute "ng-', '<textarea> proprietary attribute "ng-', '<li> proprietary attribute "ng-']
 
 
 set timeout ttimeoutlen=50
@@ -127,3 +127,4 @@ autocmd FileType less map <leader>f :call CSSBeautify()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi IndentGuidesOdd  ctermbg=white
 hi IndentGuidesEven ctermbg=lightgrey
+set fileformats=unix
