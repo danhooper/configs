@@ -24,6 +24,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

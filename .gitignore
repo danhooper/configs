@@ -10,7 +10,6 @@ vim/bundle/vim-python-pep8-indent/
 vim/bundle/vim-web-indent/
 vim/bundle/xmledit/
 vim/undo/
-
 vim/bundle/vim-markdown/
 vim/bundle/emmet-vim/
 vim/bundle/delimitMate/
@@ -21,3 +20,4 @@ vim/bundle/JavaScript-Indent/
 vim/bundle/js-beautify/
 vim/bundle/vim-indent-guides/
 vim/bundle/vim-jsbeautify/
+vim/bundle/powerline/

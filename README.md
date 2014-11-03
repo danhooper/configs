@@ -24,6 +24,11 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
+## Powerline Font Config
+```
+See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation
+```
+
 ## Installing
 sudo apt-get install cmake build-essential python-dev python-pip npm nodejs-legacy
 
