@@ -44,6 +44,10 @@ pushd ~/.vim/bundle/YouCompleteMe
 popd
 # for Javascript jshint support in syntasic
 sudo npm install -g jshint
+# tern for vim
+push ~/.vim/bundle/tern_for_vim
+npm install
+popd
 ```
 
 ## Vim Cheat Sheet

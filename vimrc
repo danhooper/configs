@@ -71,7 +71,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :vsp %%
-map <leader>n :vsp
+map <leader>n :vsp <CR>
 map <leader>s :sp %%
 map <leader>h :sp %%
 
