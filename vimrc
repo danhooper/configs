@@ -62,6 +62,7 @@ autocmd VimResized * :wincmd =
 let mapleader = ","
 let maplocalleader = ","
 nnoremap <silent> <leader><leader> :ClearCtrlPCache<cr>\|:CtrlP<cr>
+let g:ctrlp_cmd = 'CtrlP .'
 
 autocmd BufWritePre * :%s/\s\+$//e
 
