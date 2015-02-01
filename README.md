@@ -25,14 +25,12 @@ sudo apt-get upgrade
 ```
 
 ## Powerline Font Config
-```
 See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation
-```
 
 ## Installing
-sudo apt-get install cmake build-essential python-dev python-pip npm nodejs-legacy
 
 ```
+sudo apt-get install cmake build-essential python-dev python-pip nodejs
 pushd configs
 git submodule init
 git submodule update
@@ -45,7 +43,7 @@ popd
 # for Javascript jshint support in syntasic
 sudo npm install -g jshint
 # tern for vim
-push ~/.vim/bundle/tern_for_vim
+pushd ~/.vim/bundle/tern_for_vim
 npm install
 popd
 ```
