@@ -42,7 +42,9 @@ source ~/.git-prompt.sh
 
 WORKON_HOME=$HOME/virtualenvs
 
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
