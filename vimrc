@@ -12,7 +12,9 @@ Bundle 'greatghoul/vim-web-indent'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'jnurmine/Zenburn'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'Valloric/YouCompleteMe'
+if v:version >= 703
+    Bundle 'Valloric/YouCompleteMe'
+endif
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/diffchanges.vim'
 Bundle 'sukima/xmledit'
@@ -53,7 +55,9 @@ set expandtab
 set smarttab
 set number
 set noscb
-set colorcolumn=80
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
 map Y y$
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
