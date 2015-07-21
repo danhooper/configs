@@ -116,6 +116,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled=1
 
+au FileType ruby setl sw=2 sts=2 et
 au FileType html setl sw=2 sts=2 et
 au FileType htmldjango setl sw=2 sts=2 et
 au BufRead,BufNewFile *.less set filetype=css

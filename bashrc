@@ -62,6 +62,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ls='ls -G'
 
 alias df='df -h'
 
