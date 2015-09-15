@@ -129,6 +129,15 @@ ssh-add-key() {
     ssh-add
 }
 
+eval "$(grunt --completion=bash)"
+
 if [ -e "$HOME/.bashrc_custom" ] ; then
     source $HOME/.bashrc_custom
 fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

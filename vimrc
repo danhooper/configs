@@ -56,7 +56,7 @@ set smarttab
 set number
 set noscb
 if exists('+colorcolumn')
-    set colorcolumn=80
+    set colorcolumn=100
 endif
 map Y y$
 map <C-H> <C-W>h<C-W>_
@@ -91,7 +91,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " SYNTASTIC
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers = ['pep8', 'pylint', 'pyflakes']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 let g:syntastic_html_tidy_ignore_errors = ['<div> proprietary attribute "ng-', '<summernote> is not recognized!', '<span> proprietary attribute "translate"', '<button> proprietary attribute "ng-"', '<label> proprietary attribute "translate"', 'trimming empty <i>', '<button> proprietary attribute "ng-', '<input> proprietary attribute "ng-', '<span> proprietary attribute "ng-', '<button> proprietary attribute "translate"', '<li> proprietary attribute "ng-"', '<label> proprietary attribute "ng-', '<textarea> proprietary attribute "ng-', '<li> proprietary attribute "ng-', '<a> proprietary attribute "ng-', '<img> proprietary attribute "ng-']
 
 

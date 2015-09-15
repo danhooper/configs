@@ -40,8 +40,8 @@ popd
 pushd ~/.vim/bundle/YouCompleteMe
 ./install.sh
 popd
-# for Javascript jshint support in syntasic
-sudo npm install -g jshint
+# for Javascript jshint support in syntastic
+sudo npm install -g jshint jscs
 # tern for vim
 pushd ~/.vim/bundle/tern_for_vim
 npm install
