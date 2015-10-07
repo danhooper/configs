@@ -27,6 +27,7 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'editorconfig/editorconfig-vim'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,6 +80,7 @@ map <leader>v :vsp %%
 map <leader>n :vsp <CR>
 map <leader>s :sp %%
 map <leader>h :sp %%
+map <leader>tn :tabnext <CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RAINBOW PARENTHESES
