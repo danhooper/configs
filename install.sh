@@ -18,7 +18,7 @@ brew install python
 # so vim picks that version up
 brew install node vim cmake
 pip install -r requirements.txt
-npm install -g jshint yo bower generator-cg-angular
+npm install -g jshint yo bower generator-cg-angular gulp grunt
 
 vim +BundleInstall +qall
 
