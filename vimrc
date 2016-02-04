@@ -6,6 +6,7 @@ call vundle#rc()
 let g:vundle_default_git_proto='git'
 
 Bundle 'gmarik/vundle'
+" git wrapper
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'greatghoul/vim-web-indent'
@@ -15,13 +16,15 @@ Bundle 'kien/rainbow_parentheses.vim'
 if v:version >= 703
     Bundle 'Valloric/YouCompleteMe'
 endif
+" syntax checker
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/diffchanges.vim'
 Bundle 'sukima/xmledit'
 Bundle 'tell-k/vim-autopep8'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'mattn/emmet-vim'
+" Javascript editing supoprt
 Bundle 'marijnh/tern_for_vim'
+" Auto completion for quotes
 Bundle 'Raimondi/delimitMate'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
@@ -137,3 +140,9 @@ autocmd FileType less map <leader>f :call CSSBeautify()<cr>
 hi IndentGuidesOdd  ctermbg=white
 hi IndentGuidesEven ctermbg=lightgrey
 set fileformats=unix
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tern
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <leader>td :TernDef<CR>
+noremap <leader>tr :TernRefs<CR>
