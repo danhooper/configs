@@ -18,7 +18,7 @@ brew install python
 # so vim picks that version up
 brew install node vim cmake
 pip install -r requirements.txt
-npm install -g jshint yo bower generator-cg-angular gulp grunt
+npm install -g jshint yo bower generator-cg-angular gulp grunt typescript eslint
 
 vim +BundleInstall +qall
 
@@ -28,7 +28,12 @@ popd
 pushd ~/.vim/bundle/tern_for_vim
 npm install
 popd
+pushd ~/.vim/bundle/vimproc.vim
+make
+popd
+
 
 pushd $MYDIR/fonts
 ./install.sh
 popd
+

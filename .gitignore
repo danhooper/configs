@@ -22,4 +22,7 @@ vim/bundle/vim-indent-guides/
 vim/bundle/vim-jsbeautify/
 vim/bundle/powerline/
 vim/bundle/editorconfig-vim
+vim/bundle/tsuquyomi
+vim/bundle/typescript-vim
+vim/bundle/vimproc.vim
 vim/.netrwhist

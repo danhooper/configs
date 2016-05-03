@@ -31,6 +31,9 @@ Bundle 'einars/js-beautify'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'Quramy/tsuquyomi'
+Bundle 'Shougo/vimproc.vim'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
