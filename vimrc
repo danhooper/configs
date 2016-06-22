@@ -74,6 +74,7 @@ let mapleader = ","
 let maplocalleader = ","
 nnoremap <silent> <leader><leader> :ClearCtrlPCache<cr>\|:CtrlP<cr>
 let g:ctrlp_cmd = 'CtrlP .'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components)$'
 
 autocmd BufWritePre * :%s/\s\+$//e
 

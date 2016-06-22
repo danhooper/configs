@@ -14,7 +14,7 @@
     standup = !git lg --since='yesterday' --author=`git config user.email`
     su = !git standup
     weekly = !git lg --since='-6days' --author=`git config user.email`
-    monthly = !git lg --since='-30days'
+    monthly = !git lg --since='-30days' --author=`git config user.email`
     in = !git log `git rev-parse --abbrev-ref HEAD`..`git rev-parse --symbolic-full-name @{u}`
     incoming = !git in
     out = !git log `git rev-parse --symbolic-full-name @{u}`..`git rev-parse --abbrev-ref HEAD`

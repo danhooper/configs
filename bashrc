@@ -119,7 +119,7 @@ YELLOW="[\033[0;33m\]"
 GREEN="[\033[0;32m\]"
 function EXT_COLOR () { echo -ne "\033[38;5;$1m"; }
 export LS_COLORS='di=38;5;108:fi=00:*svn-commit.tmp=31:ln=38;5;116:ex=38;5;186'
-PS1='\[\e]0;\u@\h \w\a\]\[`EXT_COLOR 187`\]\u@\h\[`EXT_COLOR 174`\]\w$(hg_branch)$(__git_ps1)\$\[\033[00m\] '
+PS1='\[\e]0;\u@\h \w\a\]\[`EXT_COLOR 187`\]\u@🏠  \[`EXT_COLOR 174`\]\w$(hg_branch)$(__git_ps1)\$\[\033[00m\] '
 if [ -d "$HOME/git/git-hooks" ] ; then
     export PATH=$PATH:$HOME/git/git-hooks
 fi
@@ -146,3 +146,22 @@ eval "$(gulp --completion=bash)"
 if [ -e "$HOME/gsutil" ] ; then
     export PATH="$PATH:$HOME/gsutil"
 fi
+
+export JENV_ROOT=/usr/local/opt/jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+# for forwarding ports from 8443 to 443
+function web_forwarding_start() {
+  sudo pfctl -ef /etc/pf-web.conf
+}
+
+function web_forwarding_stop() {
+  sudo pfctl -d
+  sudo pfctl -F all -f /etc/pf.conf
+}
+
+function vs_stop() {
+    sudo kill -SIGSTOP $(pgrep SymDaemon)
+}
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
