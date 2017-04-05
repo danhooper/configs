@@ -34,6 +34,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'Quramy/tsuquyomi'
 Bundle 'Shougo/vimproc.vim'
+Bundle 'othree/html5.vim'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -165,3 +165,6 @@ function vs_stop() {
 }
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+alias wag='grep -R --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist --exclude-dir=lib'
+export ANDROID_HOME=/usr/local/opt/android-sdk
