@@ -46,6 +46,10 @@ if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+#if [ -e /usr/local/etc/bash_completion.d/gradle-completion.bash ]; then
+#    source /usr/local/etc/bash_completion.d/gradle-completion.bash
+#fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -119,7 +123,7 @@ YELLOW="[\033[0;33m\]"
 GREEN="[\033[0;32m\]"
 function EXT_COLOR () { echo -ne "\033[38;5;$1m"; }
 export LS_COLORS='di=38;5;108:fi=00:*svn-commit.tmp=31:ln=38;5;116:ex=38;5;186'
-PS1='\[\e]0;\u@\h \w\a\]\[`EXT_COLOR 187`\]\u@🏠  \[`EXT_COLOR 174`\]\w$(hg_branch)$(__git_ps1)\$\[\033[00m\] '
+PS1='\[\e]0;\u@\h \w\a\]\[`EXT_COLOR 187`\]\u@🏠  \[`EXT_COLOR 174`\]\w$(__git_ps1)\$\[\033[00m\] '
 if [ -d "$HOME/git/git-hooks" ] ; then
     export PATH=$PATH:$HOME/git/git-hooks
 fi
@@ -129,7 +133,9 @@ ssh-add-key() {
     ssh-add
 }
 
-eval "$(grunt --completion=bash)"
+if [ -x "$(command -v grunt)" ]; then
+    eval "$(grunt --completion=bash)"
+fi
 
 if [ -e "$HOME/.bashrc_custom" ] ; then
     source $HOME/.bashrc_custom
@@ -137,11 +143,6 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-eval "$(gulp --completion=bash)"
 
 if [ -e "$HOME/gsutil" ] ; then
     export PATH="$PATH:$HOME/gsutil"
@@ -160,11 +161,27 @@ function web_forwarding_stop() {
   sudo pfctl -F all -f /etc/pf.conf
 }
 
-function vs_stop() {
-    sudo kill -SIGSTOP $(pgrep SymDaemon)
+function pcd_stop() {
+    sudo kill -SIGSTOP $(pgrep parentalcontrolsd)
 }
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-alias wag='grep -R --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist --exclude-dir=lib'
+alias wag='grep -R --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist --exclude-dir=lib --exclude-dir=icons --exclude-dir=coverage --exclude-dir=po --exclude=icons.html --exclude-dir=svg'
 export ANDROID_HOME=/usr/local/opt/android-sdk
+alias gradleScrewStyle='./gradlew build -x checkstyleMain -x test -x spotBugsMain -x spotBugsTest'
+
+alias restartUi='kill `cat run/ui.pid` || true && rm run/ui.pid &&./gradlew uiRunBg'
+alias dockerAplcloud='eval $(docker-machine env aplcloud)'
+alias dockerSSH='docker-machine ssh aplcloud -f -N -L2181:localhost:2181 -L5672:localhost:5672 -L15672:localhost:15672 -L9200:localhost:9200 -L9300:localhost:9300 -L61613:localhost:61613'
+alias bnpm=/Users/hoopedc1/git/global-bsp/ui/.gradle/npm/npm-v5.5.1/bin/npm
+alias pf-kibana='ssh -fNT test.biosurv.org -L9201:vpc-load-test-3xjaalx75hxjn6f4e25deiudqm.us-east-1.es.amazonaws.com:443 -D8555'
+
+export GRADLE_OPTS=-Xmx512m
+
+function killProcs() {
+    kill `pgrep photoanalysisd`
+    kill `pgrep CalendarAgent`
+    kill `pgrep speechsynthesisd`
+    kill `pgrep cloudphotosd`
+}

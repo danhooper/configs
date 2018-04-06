@@ -10,6 +10,7 @@
     sb = shortlog -s -n
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    fixup = commit -a --amend -C HEAD
     yep = !git pull --rebase && git remote prune origin
     standup = !git lg --since='yesterday' --author=`git config user.email`
     su = !git standup
@@ -22,6 +23,7 @@
     unstage = reset HEAD --
     last = log -1 HEAD
     spp = !git stash && git pull --rebase && git stash pop
+    statusReport = !git shortlog --after="2017-08-31" --before="2017-10-01" -s -n
 
 [core]
      editor = vim
@@ -72,3 +74,5 @@
 	name = Dan Hooper
 [rerere]
 	enabled = true
+[rebase]
+	instructionFormat = (%an) %s
