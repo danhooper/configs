@@ -165,11 +165,15 @@ function pcd_stop() {
     sudo kill -SIGSTOP $(pgrep parentalcontrolsd)
 }
 
+function odd_stop() {
+    sudo kill -SIGSTOP $(pgrep opendirectoryd)
+}
+
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 alias wag='grep -R --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist --exclude-dir=lib --exclude-dir=icons --exclude-dir=coverage --exclude-dir=po --exclude=icons.html --exclude-dir=svg'
 export ANDROID_HOME=/usr/local/opt/android-sdk
-alias gradleScrewStyle='./gradlew build -x checkstyleMain -x test -x spotBugsMain -x spotBugsTest'
+alias gradleScrewStyle='./gradlew build -x check'
 
 alias restartUi='kill `cat run/ui.pid` || true && rm run/ui.pid &&./gradlew uiRunBg'
 alias dockerAplcloud='eval $(docker-machine env aplcloud)'
