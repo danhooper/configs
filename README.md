@@ -14,16 +14,6 @@ ln -s ~/git/configs/gitconfig ~/.gitconfig
 ln -s ~/git/configs/git-prompt.sh ~/.git-prompt.sh
 ```
 
-## Packages
-On Ubuntu 12.04, install a newer VIM, node and git.
-```
-sudo apt-add-repository ppa:nmi/vim-snapshots
-sudo apt-add-repository ppa:git-core/ppa
-sudo apt-add-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get upgrade
-```
-
 ## Powerline Font Config
 See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation
 
@@ -32,28 +22,13 @@ See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installa
 ### Ubuntu Deps
 ```
 sudo apt-get install cmake build-essential python-dev python-pip nodejs
-pushd configs
-git submodule init
-git submodule update
-sudo pip install -r requirements.txt
-vim +BundleInstall +qall
-popd
-pushd ~/.vim/bundle/YouCompleteMe
-./install.py
-popd
-# for Javascript jshint support in syntastic
-sudo npm install -g jshint jscs
-# tern for vim
-pushd ~/.vim/bundle/tern_for_vim
-npm install
-popd
 ```
 
 ### Mac Deps
 Install homebrew first.
 
 ```
-brew install python@2 cmake
+brew install python@2 cmake node
 ```
 
 ### Installing
