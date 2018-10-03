@@ -61,5 +61,7 @@ popd
 
 ## Mac Tools
 https://iterm2.com/
+
 https://www.spectacleapp.com/
+
 https://pilotmoon.com/scrollreverser/
