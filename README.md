@@ -58,3 +58,8 @@ popd
 * ,ig Indent Guide
 * Ctrl-O Jump Backward
 * Ctrl-I Jump Forward
+
+## Mac Tools
+https://iterm2.com/
+https://www.spectacleapp.com/
+https://pilotmoon.com/scrollreverser/
