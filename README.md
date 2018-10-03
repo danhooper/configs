@@ -29,6 +29,7 @@ See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installa
 
 ## Installing
 
+### Ubuntu
 ```
 sudo apt-get install cmake build-essential python-dev python-pip nodejs
 pushd configs
@@ -48,6 +49,11 @@ npm install
 popd
 ```
 
+### Mac
+```
+brew install python
+```
+
 ## Vim Cheat Sheet
 * ,e Edit a file in the same directory as current file
 * ,v Edit a file in the same directory in a new vertical pane
@@ -65,3 +71,5 @@ https://iterm2.com/
 https://www.spectacleapp.com/
 
 https://pilotmoon.com/scrollreverser/
+
+https://brew.sh/
