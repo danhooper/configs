@@ -140,8 +140,10 @@ fi
 if [ -e "$HOME/.bashrc_custom" ] ; then
     source $HOME/.bashrc_custom
 fi
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [ -x "$(command -v brew)" ]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 if [ -e "$HOME/gsutil" ] ; then
@@ -149,7 +151,9 @@ if [ -e "$HOME/gsutil" ] ; then
 fi
 
 export JENV_ROOT=/usr/local/opt/jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+if [ -x "$(command -v jenv)" ]; then
+    eval "$(jenv init -)"
+fi
 
 # for forwarding ports from 8443 to 443
 function web_forwarding_start() {
