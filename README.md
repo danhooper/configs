@@ -29,6 +29,8 @@ Install homebrew first.
 
 ```
 brew install python@2 cmake node
+brew install vim
+brew unlink vim && brew link vim
 ```
 
 ### Installing
