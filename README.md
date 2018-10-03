@@ -17,6 +17,8 @@ ln -s ~/git/configs/git-prompt.sh ~/.git-prompt.sh
 ## Powerline Font Config
 See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation
 
+Or https://github.com/powerline/fonts and run the install.sh
+
 ## Installing
 
 ### Ubuntu Deps
