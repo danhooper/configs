@@ -29,7 +29,7 @@ See https://powerline.readthedocs.org/en/latest/installation.html#fonts-installa
 
 ## Installing
 
-### Ubuntu
+### Ubuntu Deps
 ```
 sudo apt-get install cmake build-essential python-dev python-pip nodejs
 pushd configs
@@ -39,7 +39,7 @@ sudo pip install -r requirements.txt
 vim +BundleInstall +qall
 popd
 pushd ~/.vim/bundle/YouCompleteMe
-./install.sh
+./install.py
 popd
 # for Javascript jshint support in syntastic
 sudo npm install -g jshint jscs
@@ -49,10 +49,34 @@ npm install
 popd
 ```
 
-### Mac
+### Mac Deps
+Install homebrew first.
+
 ```
-brew install python
+brew install python@2 cmake
 ```
+
+### Installing
+After you have the dependencies installed run:
+
+```
+pushd configs
+git submodule init
+git submodule update
+sudo pip install -r requirements.txt
+vim +BundleInstall +qall
+popd
+pushd ~/.vim/bundle/YouCompleteMe
+./install.py
+popd
+# for Javascript jshint support in syntastic
+sudo npm install -g jshint jscs
+# tern for vim
+pushd ~/.vim/bundle/tern_for_vim
+npm install
+popd
+```
+
 
 ## Vim Cheat Sheet
 * ,e Edit a file in the same directory as current file
