@@ -27,9 +27,9 @@ docker run -d \
     --restart=unless-stopped \
     --dns=127.0.0.1 --dns=8.8.8.8 \
     --add-host beast:192.168.1.110 \
-    --add-host beast.dhoops.us:192.168.1.110 \
+    --add-host beast.dhoops.dev:192.168.1.110 \
     --add-host shadowcat:192.168.1.130 \
-    --add-host shadowcat.dhoops.us:192.168.1.130 \
+    --add-host shadowcat.dhoops.dev:192.168.1.130 \
     pihole/pihole:latest
 
 
