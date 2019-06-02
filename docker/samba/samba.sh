@@ -11,8 +11,10 @@ docker run -it \
     -p 137:137/udp \
     -p 138:138/udp \
     -v /mnt/disk3/media:/share \
+    -v /mnt/backup6tb01/backups:/backups \
     -d dperson/samba \
     -n \
     -w xmen \
     -g "log level = 2" \
-    -s "media;/share;yes;yes;yes;dhooper;dhooper;dhooper;media"
+    -s "media;/share;yes;yes;yes;dhooper;dhooper;dhooper;media" \
+    -s "backups;/backups;yes;yes;yes;dhooper;dhooper;dhooper;backups"
