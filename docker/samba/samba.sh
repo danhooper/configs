@@ -1,5 +1,6 @@
 docker stop samba
 docker rm samba
+docker pull dperson/samba
 docker run -it \
     --name samba \
     --net=host \

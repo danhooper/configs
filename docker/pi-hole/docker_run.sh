@@ -12,6 +12,10 @@ DOCKER_CONFIGS="$(pwd)"
 
 echo -e "### Make sure your IPs are correct, hard code ServerIP ENV VARs if necessary\nIP: ${IP}\nIPv6: ${IPv6}"
 
+docker pull pihole/pihole:latest
+docker stop pihole
+docker rm pihole
+
 # Default ports + daemonized docker container
 # Environment variables for docker can be defined in --env-file .env file
 docker run -d \
