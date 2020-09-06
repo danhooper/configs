@@ -13,8 +13,8 @@ DOCKER_CONFIGS="$(pwd)"
 echo -e "### Make sure your IPs are correct, hard code ServerIP ENV VARs if necessary\nIP: ${IP}\nIPv6: ${IPv6}"
 
 docker pull pihole/pihole:latest
-docker stop pihole
-docker rm pihole
+docker stop pihole || /bin/true
+docker rm pihole || /bin/true
 
 # Default ports + daemonized docker container
 # Environment variables for docker can be defined in --env-file .env file
@@ -34,6 +34,8 @@ docker run -d \
     --add-host beast.dhoops.dev:192.168.1.110 \
     --add-host shadowcat:192.168.1.130 \
     --add-host shadowcat.dhoops.dev:192.168.1.130 \
+    --add-host pixie:192.168.1.150 \
+    --add-host pixie.dhoops.dev:192.168.1.150 \
     pihole/pihole:latest
 
 
