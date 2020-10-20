@@ -6,10 +6,12 @@
     st = status
     ci = commit
     co = checkout
-    fu = reset --hard
     sb = shortlog -s -n
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    tmp = !git add . && git ci -m 'tmp'
+    tmpp = !git add . && git ci -m 'tmp' && git push
+    tmppv = !git add . && git ci -m 'tmp' --no-verify && git push
     fixup = commit -a --amend -C HEAD
     yep = !git pull --rebase && git remote prune origin
     standup = !git lg --since='yesterday' --author=`git config user.email`
@@ -24,6 +26,7 @@
     last = log -1 HEAD
     spp = !git stash && git pull --rebase && git stash pop
     statusReport = !git shortlog --after="2017-08-31" --before="2017-10-01" -s -n
+    pruneLocal = !git branch --no-color -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 
 [core]
      editor = vim

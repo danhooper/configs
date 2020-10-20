@@ -25,26 +25,12 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
 source ~/.git-prompt.sh
-
-WORKON_HOME=$HOME/virtualenvs
-
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
 
 #if [ -e /usr/local/etc/bash_completion.d/gradle-completion.bash ]; then
 #    source /usr/local/etc/bash_completion.d/gradle-completion.bash
@@ -70,10 +56,6 @@ alias ls='ls -G'
 
 alias df='df -h'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -85,13 +67,6 @@ fi
 
 alias rdesktop='rdesktop -g 1200x800'
 alias ssh='ssh -A'
-alias genpasswd='< /dev/urandom tr -dc [:graph:] | head -c12; echo'
-encrypt_string() {
-    echo "$1" | openssl enc -base64 -e -aes-256-cbc -salt
-}
-decrypt_string() {
-    echo "$1" | openssl enc -base64 -d -aes-256-cbc -salt
-}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -101,14 +76,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 export PYTHONSTARTUP=$HOME/.pythonstartup
 alias grep='grep --color=auto'
-alias l='ls -ltrF --color=auto'
-hg_in_repo() {
-    hg branch 2> /dev/null | awk '{print "on "}'
-}
-
-hg_branch() {
-    hg branch 2> /dev/null | awk '{print " ["$1"]"}'
-}
 
 socks_proxy() {
     ssh -D 1080 -CN $1
@@ -133,10 +100,6 @@ ssh-add-key() {
     ssh-add
 }
 
-if [ -x "$(command -v grunt)" ]; then
-    eval "$(grunt --completion=bash)"
-fi
-
 if [ -e "$HOME/.bashrc_custom" ] ; then
     source $HOME/.bashrc_custom
 fi
@@ -155,16 +118,6 @@ if [ -x "$(command -v jenv)" ]; then
     eval "$(jenv init -)"
 fi
 
-# for forwarding ports from 8443 to 443
-function web_forwarding_start() {
-  sudo pfctl -ef /etc/pf-web.conf
-}
-
-function web_forwarding_stop() {
-  sudo pfctl -d
-  sudo pfctl -F all -f /etc/pf.conf
-}
-
 function pcd_stop() {
     sudo kill -SIGSTOP $(pgrep parentalcontrolsd)
 }
@@ -175,16 +128,17 @@ function odd_stop() {
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-alias wag='grep -R --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist --exclude-dir=lib --exclude-dir=icons --exclude-dir=coverage --exclude-dir=po --exclude=icons.html --exclude-dir=svg'
+alias wag='grep -R --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist --exclude-dir=lib --exclude-dir=icons --exclude-dir=coverage --exclude-dir=po --exclude=icons.html --exclude-dir=svg --exclude-dir=build/test-results'
 export ANDROID_HOME=/usr/local/opt/android-sdk
 alias gradleScrewStyle='./gradlew build -x check'
 
-alias restartUi='kill `cat run/ui.pid` || true && rm run/ui.pid &&./gradlew uiRunBg'
 alias dockerAplcloud='eval $(docker-machine env aplcloud)'
-alias dockerSSH='docker-machine ssh aplcloud -f -N -L2181:localhost:2181 -L5672:localhost:5672 -L15672:localhost:15672 -L9200:localhost:9200 -L9300:localhost:9300 -L61613:localhost:61613'
-alias bnpm=/Users/hoopedc1/git/global-bsp/ui/.gradle/npm/npm-v5.5.1/bin/npm
-alias pf-kibana='ssh -fNT test.biosurv.org -L9201:vpc-load-test-3xjaalx75hxjn6f4e25deiudqm.us-east-1.es.amazonaws.com:443 -D8555'
+alias cdockerSSH='docker-machine ssh hoopedc1docker -f -N -L2181:localhost:2181 -L5672:localhost:5672 -L15672:localhost:15672 -L9200:localhost:9200 -L9300:localhost:9300 -L61613:localhost:61613 -L:8600:localhost:8600 -L:8644:localhost:8644 -L:25434:localhost:25434'
 
+alias devstart='docker-compose -f ~/git/cyprr/dev.docker-compose.yml up --build frontend backend nginx eventlistener'
+alias infrastart='eval $(docker-machine env hoopedc1docker) && docker-compose -f ~/git/cyprr/dev.docker-compose.yml up elasticsearch rabbit'
+alias devr='docker-compose -f ~/git/cyprr/dev.docker-compose.yml restart'
+export NODE_EXTRA_CA_CERTS=/etc/ssl/certs/JHUAPL-MS-Root-CA-05-21-2038-B64-text.cer
 export GRADLE_OPTS=-Xmx512m
 
 function killProcs() {
@@ -193,3 +147,19 @@ function killProcs() {
     kill `pgrep speechsynthesisd`
     kill `pgrep cloudphotosd`
 }
+
+# MOTD
+function echo_color() {
+  local color="$1"
+  printf "${color}$2\033[0m\n"
+}
+echo_color "\033[0;90m" "c-f  Move forward"
+echo_color "\033[0;90m" "c-b  Move backward"
+echo_color "\033[0;90m" "c-p  Move up"
+echo_color "\033[0;90m" "c-n  Move down"
+echo_color "\033[0;90m" "c-a  Jump to beginning of line"
+echo_color "\033[0;90m" "c-e  Jump to end of line"
+echo_color "\033[0;90m" "c-d  Delete forward"
+echo_color "\033[0;90m" "c-h  Delete backward"
+echo_color "\033[0;90m" "c-k  Delete forward to end of line"
+echo_color "\033[0;90m" "c-u  Delete entire line"

@@ -33,8 +33,8 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'Quramy/tsuquyomi'
-Bundle 'Shougo/vimproc.vim'
 Bundle 'othree/html5.vim'
+Plugin 'Shougo/vimproc.vim'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
