@@ -1,0 +1,10 @@
+[Unit]
+Description=Load rc_keymap file
+After=rc-local.service systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=bash -c "ir-keytable -c -w /etc/rc_keymaps/rc6_mce.toml"
+
+[Install]
+WantedBy=multi-user.target
