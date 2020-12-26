@@ -34,6 +34,8 @@ docker run -d \
     --add-host beast.dhoops.dev:192.168.1.110 \
     --add-host shadowcat:192.168.1.130 \
     --add-host shadowcat.dhoops.dev:192.168.1.130 \
+    --add-host ds920plus:192.168.1.200 \
+    --add-host ds920plus.dhoops.dev:192.168.1.200 \
     --add-host pixie:192.168.1.150 \
     --add-host pixie.dhoops.dev:192.168.1.150 \
     pihole/pihole:latest
