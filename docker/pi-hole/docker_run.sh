@@ -21,8 +21,9 @@ docker rm pihole || /bin/true
 docker run -d \
     --name pihole \
     --env-file .env \
+    -p 8443:443/tcp \
     -p 53:53/tcp -p 53:53/udp \
-    -p 11080:80 \
+    -p 8080:80 \
     --cap-add=NET_ADMIN \
     -v "${DOCKER_CONFIGS}/pihole/:/etc/pihole/" \
     -v "${DOCKER_CONFIGS}/dnsmasq.d/:/etc/dnsmasq.d/" \
