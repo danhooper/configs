@@ -5,7 +5,7 @@
 ## Media Center Remote
 
 - https://forum.mythtv.org/viewtopic.php?f=29&t=3729&start=30
-- 
+-
 
 `sudo  mkdir -p /etc/rc_keymaps`
 `sudo ln -s $(pwd)/rc6_mce.toml /etc/rc_keymaps/`
@@ -17,3 +17,11 @@ Reboot
 
 ## Software
 `sudo apt install ir-keytable`
+
+## Disable USB Auto Suspend
+See https://askubuntu.com/questions/1140925/how-can-i-disable-usb-autosuspend-on-ubuntu-18-04
+```
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/&usbcore.autosuspend=-1 /' /etc/default/grub
+update-grub
+reboot
+```
