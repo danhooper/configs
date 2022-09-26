@@ -21,9 +21,9 @@ docker rm pihole || /bin/true
 docker run -d \
     --name pihole \
     --env-file .env \
-    -p 8443:443/tcp \
+    -p 18443:443/tcp \
     -p 53:53/tcp -p 53:53/udp \
-    -p 8080:80 \
+    -p 18080:80 \
     --cap-add=NET_ADMIN \
     -v "${DOCKER_CONFIGS}/pihole/:/etc/pihole/" \
     -v "${DOCKER_CONFIGS}/dnsmasq.d/:/etc/dnsmasq.d/" \
@@ -38,6 +38,10 @@ docker run -d \
     --add-host shadowcat.dhoops.dev:192.168.1.130 \
     --add-host dsm920plus:192.168.1.200 \
     --add-host dsm920plus.dhoops.dev:192.168.1.200 \
+    --add-host hass:192.168.1.200 \
+    --add-host hass.dhoops.dev:192.168.1.200 \
+    --add-host pihole:192.168.1.200 \
+    --add-host pihole.dhoops.dev:192.168.1.200 \
     --add-host pixie:192.168.1.150 \
     --add-host pixie.dhoops.dev:192.168.1.150 \
     pihole/pihole:latest
