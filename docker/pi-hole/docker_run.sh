@@ -40,6 +40,8 @@ docker run -d \
     --add-host dsm920plus.dhoops.dev:192.168.1.200 \
     --add-host hass:192.168.1.200 \
     --add-host hass.dhoops.dev:192.168.1.200 \
+    --add-host jellyfin:192.168.1.200 \
+    --add-host jellyfin.dhoops.dev:192.168.1.200 \
     --add-host pihole:192.168.1.200 \
     --add-host pihole.dhoops.dev:192.168.1.200 \
     --add-host pixie:192.168.1.150 \

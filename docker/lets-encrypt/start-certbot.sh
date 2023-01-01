@@ -30,7 +30,7 @@ mkdir -p "$SCRIPT_DIR/letsencrypt"
 docker pull certbot/certbot:latest
 docker stop certbot || /bin/true
 docker update --restart=no certbot || /bin/true
-docker rename certbot certbot-`date -u +"%Y-%m-%dT%H%M%SZ"` || /bin/true
+docker rm certbot || /bin/true
 
 docker run --name certbot \
     -v "$SECRETS_DIR:/secrets" \

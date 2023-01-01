@@ -1,7 +1,0 @@
-- module: nginx
-  access:
-    enabled: true
-    var.paths: ["/log/nginx/access.log*"]
-  error:
-    enabled: true
-    var.paths: ["/log/nginx/error.log*"]
