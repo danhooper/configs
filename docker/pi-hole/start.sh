@@ -44,6 +44,8 @@ docker run -d \
     --add-host jellyfin.dhoops.dev:192.168.1.200 \
     --add-host pihole:192.168.1.200 \
     --add-host pihole.dhoops.dev:192.168.1.200 \
+    --add-host channels:192.168.1.200 \
+    --add-host channels.dhoops.dev:192.168.1.200 \
     --add-host pixie:192.168.1.150 \
     --add-host pixie.dhoops.dev:192.168.1.150 \
     pihole/pihole:latest

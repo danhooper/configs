@@ -27,12 +27,13 @@ fi
 
 mkdir -p "$SCRIPT_DIR/letsencrypt"
 
-docker pull certbot/certbot:latest
+docker pull certbot/dns-google:latest
 docker stop certbot || /bin/true
 docker update --restart=no certbot || /bin/true
 docker rm certbot || /bin/true
 
 docker run --name certbot \
+    --network host \
     -v "$SECRETS_DIR:/secrets" \
     -v "$SCRIPT_DIR/letsencrypt:/etc/letsencrypt" \
 	certbot/dns-google \
