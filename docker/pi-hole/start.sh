@@ -31,11 +31,6 @@ docker run -d \
     -e ServerIPv6="${IPv6}" \
     --restart=unless-stopped \
     --dns=127.0.0.1 --dns=8.8.8.8 \
-    --add-host beast:192.168.1.110 \
-    --add-host beast.dhoops.dev:192.168.1.110 \
-    --add-host dhoops.dev:192.168.1.130 \
-    --add-host shadowcat:192.168.1.130 \
-    --add-host shadowcat.dhoops.dev:192.168.1.130 \
     --add-host dsm920plus:192.168.1.200 \
     --add-host dsm920plus.dhoops.dev:192.168.1.200 \
     --add-host hass:192.168.1.200 \
@@ -44,10 +39,10 @@ docker run -d \
     --add-host jellyfin.dhoops.dev:192.168.1.200 \
     --add-host pihole:192.168.1.200 \
     --add-host pihole.dhoops.dev:192.168.1.200 \
-    --add-host channels:192.168.1.200 \
-    --add-host channels.dhoops.dev:192.168.1.200 \
-    --add-host pixie:192.168.1.150 \
-    --add-host pixie.dhoops.dev:192.168.1.150 \
+    --add-host dsm920plus.dhoops.net:192.168.1.200 \
+    --add-host hass.dhoops.net:192.168.1.200 \
+    --add-host jellyfin.dhoops.net:192.168.1.200 \
+    --add-host pihole.dhoops.net:192.168.1.200 \
     pihole/pihole:latest
 
 
