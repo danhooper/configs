@@ -27,3 +27,6 @@ vim/bundle/typescript-vim
 vim/bundle/vimproc.vim
 vim/bundle
 vim/.netrwhist
+docker/esphome/config
+.DS_Store
+@eaDir

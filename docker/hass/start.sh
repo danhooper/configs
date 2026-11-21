@@ -6,6 +6,8 @@ docker pull ghcr.io/home-assistant/home-assistant:stable
 docker stop homeassistant || /bin/true
 docker rm homeassistant || /bin/true
 
+echo "Starting"
+
 docker run -d \
   --name homeassistant \
   --privileged \

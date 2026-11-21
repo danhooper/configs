@@ -12,7 +12,7 @@ DOCKER_CONFIGS="$(pwd)"
 
 echo -e "### Make sure your IPs are correct, hard code ServerIP ENV VARs if necessary\nIP: ${IP}\nIPv6: ${IPv6}"
 
-docker pull pihole/pihole:latest
+#docker pull pihole/pihole:latest
 docker stop pihole || /bin/true
 docker rm pihole || /bin/true
 
@@ -25,6 +25,8 @@ docker run -d \
     -p 53:53/tcp -p 53:53/udp \
     -p 18080:80 \
     --cap-add=NET_ADMIN \
+	--cap-add CAP_SYS_NICE \
+	--cap-add CAP_SYS_TIME \
     -v "${DOCKER_CONFIGS}/pihole/:/etc/pihole/" \
     -v "${DOCKER_CONFIGS}/dnsmasq.d/:/etc/dnsmasq.d/" \
     -e ServerIP="${IP}" \
@@ -33,16 +35,24 @@ docker run -d \
     --dns=127.0.0.1 --dns=8.8.8.8 \
     --add-host dsm920plus:192.168.1.200 \
     --add-host dsm920plus.dhoops.dev:192.168.1.200 \
+    --add-host dsmbackup:192.168.1.99 \
+    --add-host dsmbackup.dhoops.dev:192.168.1.99 \
     --add-host hass:192.168.1.200 \
     --add-host hass.dhoops.dev:192.168.1.200 \
     --add-host jellyfin:192.168.1.200 \
     --add-host jellyfin.dhoops.dev:192.168.1.200 \
+    --add-host esphome:192.168.1.200 \
+    --add-host esphome.dhoops.net:192.168.1.200 \
     --add-host pihole:192.168.1.200 \
     --add-host pihole.dhoops.dev:192.168.1.200 \
     --add-host dsm920plus.dhoops.net:192.168.1.200 \
     --add-host hass.dhoops.net:192.168.1.200 \
     --add-host jellyfin.dhoops.net:192.168.1.200 \
     --add-host pihole.dhoops.net:192.168.1.200 \
+    --add-host raspberrypi.dhoops.net:192.168.1.124 \
+    --add-host raspberrypi:192.168.1.124 \
+    --add-host unifi.dhoops.net:192.168.1.1 \
+    --add-host unifi:192.168.1.1 \
     pihole/pihole:latest
 
 
